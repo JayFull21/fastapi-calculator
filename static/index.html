@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>FastAPI Calculator</title>
+<style>
+  body { font-family: Arial, sans-serif; max-width: 420px; margin: 60px auto; text-align: center; }
+  input { width: 80px; padding: 8px; margin: 5px; font-size: 16px; }
+  button { padding: 8px 14px; margin: 4px; font-size: 15px; cursor: pointer; }
+  #result { margin-top: 20px; font-size: 22px; font-weight: bold; }
+  #error { margin-top: 10px; color: #c0392b; font-weight: bold; }
+</style>
+</head>
+<body>
+  <h1>FastAPI Calculator</h1>
+
+  <input id="a" type="number" placeholder="A" />
+  <input id="b" type="number" placeholder="B" />
+
+  <div>
+    <button id="add-btn" onclick="calculate('add')">Add</button>
+    <button id="subtract-btn" onclick="calculate('subtract')">Subtract</button>
+    <button id="multiply-btn" onclick="calculate('multiply')">Multiply</button>
+    <button id="divide-btn" onclick="calculate('divide')">Divide</button>
+  </div>
+
+  <div id="result"></div>
+  <div id="error"></div>
+
+  <script>
+    async function calculate(operation) {
+      const a = parseFloat(document.getElementById('a').value);
+      const b = parseFloat(document.getElementById('b').value);
+      const resultDiv = document.getElementById('result');
+      const errorDiv = document.getElementById('error');
+      resultDiv.textContent = '';
+      errorDiv.textContent = '';
+
+      if (Number.isNaN(a) || Number.isNaN(b)) {
+        errorDiv.textContent = 'Please enter valid numbers for A and B.';
+        return;
+      }
+
+      try {
+        const response = await fetch(`/${operation}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ a, b })
+        });
+        const data = await response.json();
+        if (!response.ok) {
+          errorDiv.textContent = data.detail || 'An error occurred.';
+          return;
+        }
+        resultDiv.textContent = `Result: ${data.result}`;
+      } catch (err) {
+        errorDiv.textContent = 'Network error: could not reach server.';
+      }
+    }
+  </script>
+</body>
+</html>
