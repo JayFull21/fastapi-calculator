@@ -6,6 +6,7 @@ multiply, divide) as well as a minimal HTML front end for interactive
 use / end-to-end testing with Playwright.
 """
 
+import logging
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException, Request
@@ -13,7 +14,11 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
+from app.logging_config import setup_logging
 from app import operations
+
+setup_logging()
+logger = logging.getLogger("calculator.main")
 
 app = FastAPI(title="FastAPI Calculator", version="1.0.0")
 
@@ -36,6 +41,7 @@ class OperationResponse(BaseModel):
 @app.get("/", response_class=HTMLResponse)
 async def read_index(request: Request) -> HTMLResponse:
     """Serve the calculator's single-page HTML front end."""
+    logger.info(f"Serving index page to client {request.client}")
     index_path = STATIC_DIR / "index.html"
     return HTMLResponse(content=index_path.read_text(), status_code=200)
 
@@ -43,33 +49,39 @@ async def read_index(request: Request) -> HTMLResponse:
 @app.get("/health")
 async def health_check() -> dict:
     """Simple health check endpoint used by CI / uptime checks."""
+    logger.info("Health check requested")
     return {"status": "ok"}
 
 
-def _handle_operation(func, payload: OperationRequest) -> OperationResponse:
-    """Shared helper to run an operation and translate errors to HTTP errors."""
+def _handle_operation(op_name: str, func, payload: OperationRequest) -> OperationResponse:
+    """Shared helper to run an operation, log it, and translate errors to HTTP errors."""
     try:
         result = func(payload.a, payload.b)
         return OperationResponse(result=result)
     except ValueError as exc:
+        logger.error(f"{op_name} failed for a={payload.a}, b={payload.b}: {exc}")
         raise HTTPException(status_code=400, detail=str(exc))
 
 
 @app.post("/add", response_model=OperationResponse)
 async def add_endpoint(payload: OperationRequest) -> OperationResponse:
-    return _handle_operation(operations.add, payload)
+    logger.info(f"Received /add request: {payload}")
+    return _handle_operation("ADD", operations.add, payload)
 
 
 @app.post("/subtract", response_model=OperationResponse)
 async def subtract_endpoint(payload: OperationRequest) -> OperationResponse:
-    return _handle_operation(operations.subtract, payload)
+    logger.info(f"Received /subtract request: {payload}")
+    return _handle_operation("SUBTRACT", operations.subtract, payload)
 
 
 @app.post("/multiply", response_model=OperationResponse)
 async def multiply_endpoint(payload: OperationRequest) -> OperationResponse:
-    return _handle_operation(operations.multiply, payload)
+    logger.info(f"Received /multiply request: {payload}")
+    return _handle_operation("MULTIPLY", operations.multiply, payload)
 
 
 @app.post("/divide", response_model=OperationResponse)
 async def divide_endpoint(payload: OperationRequest) -> OperationResponse:
-    return _handle_operation(operations.divide, payload)
+    logger.info(f"Received /divide request: {payload}")
+    return _handle_operation("DIVIDE", operations.divide, payload)
