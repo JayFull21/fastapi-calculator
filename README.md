@@ -36,27 +36,6 @@ fastapi_calculator/
 └── pytest.ini
 ```
 
-## Setup
-
-```bash
-# 1. Create and activate a virtual environment (recommended)
-python -m venv venv
-source venv/bin/activate      # on Windows: venv\Scripts\activate
-
-# 2. Install dependencies
-pip install -r requirements.txt
-
-# 3. Install Playwright's browser binaries (only needed for e2e tests)
-playwright install chromium
-```
-
-## Running the app locally
-
-```bash
-uvicorn app.main:app --reload
-```
-
-Then open **http://127.0.0.1:8000** in your browser.
 
 ## Running the tests
 
@@ -72,16 +51,9 @@ uvicorn app.main:app &
 pytest tests/e2e -v
 ```
 
-## Logging
-
-All operations and errors are logged with timestamps to both the console
-and `logs/app.log` (rotated at 1 MB, keeping 3 backups). Log format:
-
-```
-2026-07-05 15:22:06,583 | INFO | calculator.operations | ADD: 4.0 + 5.0 = 9.0
 ```
 
-## Continuous Integration
+## Postgres Integration
 
 Every push triggers `.github/workflows/ci.yml`, which:
 1. Installs dependencies
