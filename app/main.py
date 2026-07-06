@@ -9,13 +9,16 @@ use / end-to-end testing with Playwright.
 import logging
 from pathlib import Path
 
-from fastapi import FastAPI, HTTPException, Request
+from fastapi import FastAPI, HTTPException, Request, Depends
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
+from sqlalchemy import text
+from sqlalchemy.orm import Session
 
 from app.logging_config import setup_logging
 from app import operations
+from app.database import get_db
 
 setup_logging()
 logger = logging.getLogger("calculator.main")
@@ -51,6 +54,18 @@ async def health_check() -> dict:
     """Simple health check endpoint used by CI / uptime checks."""
     logger.info("Health check requested")
     return {"status": "ok"}
+
+
+@app.get("/db-health")
+async def db_health_check(db: Session = Depends(get_db)) -> dict:
+    """Confirms the FastAPI app can reach the PostgreSQL database."""
+    try:
+        db.execute(text("SELECT 1"))
+        logger.info("Database health check succeeded")
+        return {"status": "ok", "database": "connected"}
+    except Exception as exc:
+        logger.error(f"Database health check failed: {exc}")
+        raise HTTPException(status_code=503, detail="Database unavailable")
 
 
 def _handle_operation(op_name: str, func, payload: OperationRequest) -> OperationResponse:
