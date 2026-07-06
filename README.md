@@ -63,48 +63,4 @@ Every push triggers `.github/workflows/ci.yml`, which:
 5. Starts the FastAPI server
 6. Runs end-to-end tests against the live server
 
-## Running with Docker Compose (FastAPI + PostgreSQL + pgAdmin)
-
-This project can also run as three containers: the FastAPI app, a
-PostgreSQL database, and pgAdmin for browsing/querying that database.
-
-```bash
-docker-compose up --build
-```
-
-Once the containers are up:
-
-- **FastAPI app**: http://localhost:8000
-- **pgAdmin**: http://localhost:5050
-  - Login email: `admin@example.com`
-  - Login password: `admin`
-  - Add a new server connection inside pgAdmin with:
-    - Host: `db`
-    - Port: `5432`
-    - Username: `postgres`
-    - Password: `postgres`
-    - Database: `fastapi_db`
-
-The SQL scripts under `sql/` correspond to each assignment step and can be
-run directly in pgAdmin's Query Tool, in order:
-
-1. `sql/01_create_tables.sql` — creates `users` and `calculations` tables
-2. `sql/02_insert_records.sql` — inserts sample users and calculations
-3. `sql/03_queries.sql` — SELECTs and a JOIN across the two tables
-4. `sql/04_update.sql` — updates a calculation's result
-5. `sql/05_delete.sql` — deletes a calculation record
-
-To confirm the FastAPI app itself can reach the database, visit:
-```
-http://localhost:8000/db-health
-```
-which should return `{"status": "ok", "database": "connected"}`.
-
-To stop everything:
-```bash
-docker-compose down
-```
-To stop and also wipe the database volume:
-```bash
-docker-compose down -v
-```
+#
