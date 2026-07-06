@@ -1,13 +1,4 @@
-"""
-test_e2e.py
 
-End-to-end tests using Playwright's sync API + pytest. These tests drive
-a real (headless) browser against the running FastAPI app, exercising
-the same HTML/JS a human user would interact with.
-
-Requires the app to be served at BASE_URL (default http://127.0.0.1:8000).
-In CI, a separate step starts the server (uvicorn) before these tests run.
-"""
 
 import os
 import pytest

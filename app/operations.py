@@ -1,8 +1,4 @@
-"""
-operations.py
 
-Core arithmetic operations used by the FastAPI calculator application.
-"""
 
 import logging
 

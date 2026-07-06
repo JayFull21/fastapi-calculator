@@ -1,10 +1,4 @@
-"""
-models.py
 
-SQLAlchemy ORM models representing the users and calculations tables,
-including the one-to-many relationship between them (a user can have
-many calculations; each calculation belongs to exactly one user).
-"""
 
 from sqlalchemy import Column, Integer, String, Float, TIMESTAMP, ForeignKey, func
 from sqlalchemy.orm import relationship

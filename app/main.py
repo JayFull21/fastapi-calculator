@@ -1,10 +1,4 @@
-"""
-main.py
 
-FastAPI application exposing a simple calculator API (add, subtract,
-multiply, divide) as well as a minimal HTML front end for interactive
-use / end-to-end testing with Playwright.
-"""
 
 import logging
 from pathlib import Path

@@ -1,10 +1,3 @@
-"""
-logging_config.py
-
-Centralized logging setup for the calculator application. Logs go both to
-the console and to a rotating file (logs/app.log) so history is preserved
-across runs without growing unbounded.
-"""
 
 import logging
 import os

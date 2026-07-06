@@ -1,9 +1,4 @@
-"""
-test_operations.py
 
-Unit tests for the pure arithmetic functions in app/operations.py.
-These tests do not touch the FastAPI app or the network at all.
-"""
 
 import pytest
 

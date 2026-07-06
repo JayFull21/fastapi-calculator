@@ -1,9 +1,4 @@
-"""
-database.py
 
-SQLAlchemy engine and session setup for connecting the FastAPI app to
-the PostgreSQL database defined in docker-compose.yml.
-"""
 
 import os
 from sqlalchemy import create_engine
@@ -22,7 +17,6 @@ Base = declarative_base()
 
 
 def get_db():
-    """FastAPI dependency that yields a database session and closes it after use."""
     db = SessionLocal()
     try:
         yield db
