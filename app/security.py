@@ -1,14 +1,19 @@
 """Password hashing """
 
-from passlib.context import CryptContext
+import bcrypt
 
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+_MAX_BCRYPT_BYTES = 72
 
 
 def hash_password(password: str) -> str:
     """Hash a plain-text password for storage."""
-    return pwd_context.hash(password)
+    password_bytes = password.encode("utf-8")[:_MAX_BCRYPT_BYTES]
+    salt = bcrypt.gensalt()
+    hashed = bcrypt.hashpw(password_bytes, salt)
+    return hashed.decode("utf-8")
 
 
 def verify_password(plain_password: str, password_hash: str) -> bool:
-    return pwd_context.verify(plain_password, password_hash)
+    password_bytes = plain_password.encode("utf-8")[:_MAX_BCRYPT_BYTES]
+    hash_bytes = password_hash.encode("utf-8")
+    return bcrypt.checkpw(password_bytes, hash_bytes)
