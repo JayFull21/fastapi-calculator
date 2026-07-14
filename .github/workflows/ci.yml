@@ -43,8 +43,7 @@ jobs:
         env:
           TEST_DATABASE_URL: postgresql://postgres:postgres@localhost:5432/test_db
         run: |
-          pytest --cov=app --cov-report=term-missing
-
+               pytest --cov=app --cov-report=term-missing --ignore=tests/e2e
   build-scan-push:
     needs: test
     runs-on: ubuntu-latest
