@@ -1,66 +1,68 @@
-# FastAPI Calculator
+# Module 12 — User Auth + Calculation BREAD API
 
-A simple calculator web application built with FastAPI, covered by unit,
-integration, and end-to-end (Playwright) tests, with logging and a
-GitHub Actions CI pipeline.
+FastAPI application with user registration/login (bcrypt-hashed passwords, JWT tokens) and full BREAD endpoints for calculations, backed by PostgreSQL. Integration tests run in GitHub Actions against a live Postgres service, and a passing build pushes a new image to Docker Hub.
 
-## Features
+**Docker Hub:** https://hub.docker.com/r/jayfull21/module12_fastapi_calculations
 
-- REST API endpoints: `/add`, `/subtract`, `/multiply`, `/divide`
-- Minimal HTML/JS front end served at `/`
-- Centralized logging to console and `logs/app.log`
-- Full test suite:
-  - **Unit tests** — `tests/test_operations.py`
-  - **Integration tests** — `tests/test_main.py`
-  - **End-to-end tests** — `tests/e2e/test_e2e.py` (Playwright)
-- GitHub Actions workflow (`.github/workflows/ci.yml`) that runs all three
-  test layers automatically on every push/PR.
+## Endpoints
 
-## Project Structure
+| Method | Path | Description |
+|--------|------|-------------|
+| POST | `/users/register` | Register a new user (unique username + email) |
+| POST | `/users/login` | Log in, returns a JWT bearer token |
+| GET | `/calculations` | Browse the authenticated user's calculations |
+| GET | `/calculations/{id}` | Read one calculation |
+| PUT | `/calculations/{id}` | Edit a calculation (result is recomputed) |
+| POST | `/calculations` | Add a calculation (`addition`, `subtraction`, `multiplication`, `division`) |
+| DELETE | `/calculations/{id}` | Delete a calculation |
 
-```
-fastapi_calculator/
-├── app/
-│   ├── main.py              # FastAPI app + routes
-│   ├── operations.py        # Core arithmetic functions
-│   └── logging_config.py    # Logging setup
-├── static/
-│   └── index.html           # Front-end UI
-├── tests/
-│   ├── test_operations.py   # Unit tests
-│   ├── test_main.py         # Integration tests
-│   └── e2e/
-│       └── test_e2e.py      # Playwright end-to-end tests
-├── .github/workflows/ci.yml # CI pipeline
-├── requirements.txt
-└── pytest.ini
-```
+All `/calculations` endpoints require an `Authorization: Bearer <token>` header from `/users/login`.
 
-
-## Running the tests
+## Run locally with Docker Compose
 
 ```bash
-# Unit tests
-pytest tests/test_operations.py -v
-
-# Integration tests
-pytest tests/test_main.py -v
-
-# End-to-end tests (requires the app to be running separately)
-uvicorn app.main:app &
-pytest tests/e2e -v
+docker compose up --build
 ```
 
+App: http://localhost:8000 — Swagger UI: http://localhost:8000/docs — ReDoc: http://localhost:8000/redoc
+
+## Run integration tests
+
+Start Postgres (via compose or your own instance), then:
+
+```bash
+python -m venv venv
+source venv/bin/activate        # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+export DATABASE_URL=postgresql://postgres:postgres@localhost:5432/fastapi_db
+pytest tests -v
 ```
 
-## Postgres Integration
+The suite covers: user registration (success, duplicates, invalid email, short password, hashed password verified directly in the DB), login (success, wrong password, unknown user, login by email), and calculation BREAD (create/read/update/delete, recomputed results, divide-by-zero rejection, invalid type/inputs, 404s, auth required, per-user isolation).
 
-Every push triggers `.github/workflows/ci.yml`, which:
-1. Installs dependencies
-2. Runs unit tests
-3. Runs integration tests
-4. Installs Playwright + Chromium
-5. Starts the FastAPI server
-6. Runs end-to-end tests against the live server
+## Manual checks via OpenAPI (`/docs`)
 
-#
+1. `POST /users/register` — body:
+   ```json
+   {"username": "jay", "email": "jay@example.com", "password": "SuperSecret123"}
+   ```
+   Expect **201** with the user (no password fields returned).
+2. `POST /users/login` with the same username/password — expect **200** and an `access_token`.
+3. Click **Authorize** (top right), paste the token, confirm.
+4. `POST /calculations` — body:
+   ```json
+   {"type": "addition", "inputs": [2, 3, 5]}
+   ```
+   Expect **201** with `"result": 10`.
+5. `GET /calculations` — your calculation appears in the list.
+6. `PUT /calculations/{id}` with `{"type": "division", "inputs": [10, 0]}` — expect **422** (divide by zero).
+7. `DELETE /calculations/{id}` — expect **204**, then `GET` the same id — expect **404**.
+
+## CI/CD
+
+`.github/workflows/ci.yml` runs on every push/PR:
+
+1. **test job** — spins up a `postgres:16` service container, installs dependencies, runs `pytest tests -v` against it.
+2. **deploy job** — only on a passing `main` push: logs in to Docker Hub and pushes `jayfull21/module12_fastapi_calculations:latest` (plus a commit-SHA tag).
+
+Required repo secrets: `DOCKERHUB_USERNAME`, `DOCKERHUB_TOKEN` (access token with **Read & Write** scope).
