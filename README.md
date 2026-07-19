@@ -40,29 +40,3 @@ pytest tests -v
 
 The suite covers: user registration (success, duplicates, invalid email, short password, hashed password verified directly in the DB), login (success, wrong password, unknown user, login by email), and calculation BREAD (create/read/update/delete, recomputed results, divide-by-zero rejection, invalid type/inputs, 404s, auth required, per-user isolation).
 
-## Manual checks via OpenAPI (`/docs`)
-
-1. `POST /users/register` — body:
-   ```json
-   {"username": "jay", "email": "jay@example.com", "password": "SuperSecret123"}
-   ```
-   Expect **201** with the user (no password fields returned).
-2. `POST /users/login` with the same username/password — expect **200** and an `access_token`.
-3. Click **Authorize** (top right), paste the token, confirm.
-4. `POST /calculations` — body:
-   ```json
-   {"type": "addition", "inputs": [2, 3, 5]}
-   ```
-   Expect **201** with `"result": 10`.
-5. `GET /calculations` — your calculation appears in the list.
-6. `PUT /calculations/{id}` with `{"type": "division", "inputs": [10, 0]}` — expect **422** (divide by zero).
-7. `DELETE /calculations/{id}` — expect **204**, then `GET` the same id — expect **404**.
-
-## CI/CD
-
-`.github/workflows/ci.yml` runs on every push/PR:
-
-1. **test job** — spins up a `postgres:16` service container, installs dependencies, runs `pytest tests -v` against it.
-2. **deploy job** — only on a passing `main` push: logs in to Docker Hub and pushes `jayfull21/module12_fastapi_calculations:latest` (plus a commit-SHA tag).
-
-Required repo secrets: `DOCKERHUB_USERNAME`, `DOCKERHUB_TOKEN` (access token with **Read & Write** scope).
