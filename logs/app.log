@@ -1,0 +1,373 @@
+2026-07-14 00:30:07,966 | INFO     | calculator.main | Serving index page to client Address(host='testclient', port=50000)
+2026-07-14 00:30:07,970 | INFO     | calculator.main | Health check requested
+2026-07-14 00:30:07,972 | INFO     | calculator.main | Received /add request: a=2.0 b=3.0
+2026-07-14 00:30:07,972 | INFO     | calculator.operations | ADD: 2.0 + 3.0 = 5.0
+2026-07-14 00:30:07,974 | INFO     | calculator.main | Received /add request: a=-2.0 b=-3.0
+2026-07-14 00:30:07,974 | INFO     | calculator.operations | ADD: -2.0 + -3.0 = -5.0
+2026-07-14 00:30:07,976 | INFO     | calculator.main | Received /subtract request: a=10.0 b=4.0
+2026-07-14 00:30:07,976 | INFO     | calculator.operations | SUBTRACT: 10.0 - 4.0 = 6.0
+2026-07-14 00:30:07,977 | INFO     | calculator.main | Received /subtract request: a=4.0 b=10.0
+2026-07-14 00:30:07,977 | INFO     | calculator.operations | SUBTRACT: 4.0 - 10.0 = -6.0
+2026-07-14 00:30:07,979 | INFO     | calculator.main | Received /multiply request: a=3.0 b=5.0
+2026-07-14 00:30:07,979 | INFO     | calculator.operations | MULTIPLY: 3.0 * 5.0 = 15.0
+2026-07-14 00:30:07,981 | INFO     | calculator.main | Received /multiply request: a=-3.0 b=5.0
+2026-07-14 00:30:07,981 | INFO     | calculator.operations | MULTIPLY: -3.0 * 5.0 = -15.0
+2026-07-14 00:30:07,982 | INFO     | calculator.main | Received /divide request: a=10.0 b=2.0
+2026-07-14 00:30:07,982 | INFO     | calculator.operations | DIVIDE: 10.0 / 2.0 = 5.0
+2026-07-14 00:30:07,984 | INFO     | calculator.main | Received /divide request: a=7.0 b=2.0
+2026-07-14 00:30:07,984 | INFO     | calculator.operations | DIVIDE: 7.0 / 2.0 = 3.5
+2026-07-14 00:30:07,986 | INFO     | calculator.main | Received /divide request: a=5.0 b=0.0
+2026-07-14 00:30:07,986 | ERROR    | calculator.operations | DIVIDE: Attempted division by zero (5.0 / 0.0)
+2026-07-14 00:30:07,986 | ERROR    | calculator.main | DIVIDE failed for a=5.0, b=0.0: Division by zero is not allowed.
+2026-07-14 00:30:07,998 | INFO     | calculator.operations | ADD: 1 + 2 = 3
+2026-07-14 00:30:07,998 | INFO     | calculator.operations | ADD: -1 + 1 = 0
+2026-07-14 00:30:07,999 | INFO     | calculator.operations | ADD: -5 + -5 = -10
+2026-07-14 00:30:07,999 | INFO     | calculator.operations | ADD: 0 + 0 = 0
+2026-07-14 00:30:08,000 | INFO     | calculator.operations | ADD: 2.5 + 2.5 = 5.0
+2026-07-14 00:30:08,001 | INFO     | calculator.operations | SUBTRACT: 5 - 3 = 2
+2026-07-14 00:30:08,001 | INFO     | calculator.operations | SUBTRACT: 3 - 5 = -2
+2026-07-14 00:30:08,002 | INFO     | calculator.operations | SUBTRACT: 0 - 0 = 0
+2026-07-14 00:30:08,002 | INFO     | calculator.operations | SUBTRACT: -5 - -5 = 0
+2026-07-14 00:30:08,003 | INFO     | calculator.operations | SUBTRACT: 2.5 - 0.5 = 2.0
+2026-07-14 00:30:08,004 | INFO     | calculator.operations | MULTIPLY: 3 * 4 = 12
+2026-07-14 00:30:08,004 | INFO     | calculator.operations | MULTIPLY: -3 * 4 = -12
+2026-07-14 00:30:08,005 | INFO     | calculator.operations | MULTIPLY: 0 * 100 = 0
+2026-07-14 00:30:08,005 | INFO     | calculator.operations | MULTIPLY: -2 * -2 = 4
+2026-07-14 00:30:08,006 | INFO     | calculator.operations | MULTIPLY: 2.5 * 2 = 5.0
+2026-07-14 00:30:08,006 | INFO     | calculator.operations | DIVIDE: 10 / 2 = 5.0
+2026-07-14 00:30:08,007 | INFO     | calculator.operations | DIVIDE: 9 / 3 = 3.0
+2026-07-14 00:30:08,008 | INFO     | calculator.operations | DIVIDE: -10 / 2 = -5.0
+2026-07-14 00:30:08,008 | INFO     | calculator.operations | DIVIDE: 5 / 2 = 2.5
+2026-07-14 00:30:08,009 | ERROR    | calculator.operations | DIVIDE: Attempted division by zero (10 / 0)
+2026-07-14 00:38:10,906 | INFO     | calculator.main | Serving index page to client Address(host='testclient', port=50000)
+2026-07-14 00:38:10,910 | INFO     | calculator.main | Health check requested
+2026-07-14 00:38:10,912 | INFO     | calculator.main | Received /add request: a=2.0 b=3.0
+2026-07-14 00:38:10,912 | INFO     | calculator.operations | ADD: 2.0 + 3.0 = 5.0
+2026-07-14 00:38:10,914 | INFO     | calculator.main | Received /add request: a=-2.0 b=-3.0
+2026-07-14 00:38:10,914 | INFO     | calculator.operations | ADD: -2.0 + -3.0 = -5.0
+2026-07-14 00:38:10,916 | INFO     | calculator.main | Received /subtract request: a=10.0 b=4.0
+2026-07-14 00:38:10,916 | INFO     | calculator.operations | SUBTRACT: 10.0 - 4.0 = 6.0
+2026-07-14 00:38:10,918 | INFO     | calculator.main | Received /subtract request: a=4.0 b=10.0
+2026-07-14 00:38:10,918 | INFO     | calculator.operations | SUBTRACT: 4.0 - 10.0 = -6.0
+2026-07-14 00:38:10,920 | INFO     | calculator.main | Received /multiply request: a=3.0 b=5.0
+2026-07-14 00:38:10,920 | INFO     | calculator.operations | MULTIPLY: 3.0 * 5.0 = 15.0
+2026-07-14 00:38:10,921 | INFO     | calculator.main | Received /multiply request: a=-3.0 b=5.0
+2026-07-14 00:38:10,921 | INFO     | calculator.operations | MULTIPLY: -3.0 * 5.0 = -15.0
+2026-07-14 00:38:10,923 | INFO     | calculator.main | Received /divide request: a=10.0 b=2.0
+2026-07-14 00:38:10,923 | INFO     | calculator.operations | DIVIDE: 10.0 / 2.0 = 5.0
+2026-07-14 00:38:10,925 | INFO     | calculator.main | Received /divide request: a=7.0 b=2.0
+2026-07-14 00:38:10,925 | INFO     | calculator.operations | DIVIDE: 7.0 / 2.0 = 3.5
+2026-07-14 00:38:10,926 | INFO     | calculator.main | Received /divide request: a=5.0 b=0.0
+2026-07-14 00:38:10,926 | ERROR    | calculator.operations | DIVIDE: Attempted division by zero (5.0 / 0.0)
+2026-07-14 00:38:10,926 | ERROR    | calculator.main | DIVIDE failed for a=5.0, b=0.0: Division by zero is not allowed.
+2026-07-14 00:38:10,938 | INFO     | calculator.operations | ADD: 1 + 2 = 3
+2026-07-14 00:38:10,939 | INFO     | calculator.operations | ADD: -1 + 1 = 0
+2026-07-14 00:38:10,939 | INFO     | calculator.operations | ADD: -5 + -5 = -10
+2026-07-14 00:38:10,940 | INFO     | calculator.operations | ADD: 0 + 0 = 0
+2026-07-14 00:38:10,941 | INFO     | calculator.operations | ADD: 2.5 + 2.5 = 5.0
+2026-07-14 00:38:10,941 | INFO     | calculator.operations | SUBTRACT: 5 - 3 = 2
+2026-07-14 00:38:10,942 | INFO     | calculator.operations | SUBTRACT: 3 - 5 = -2
+2026-07-14 00:38:10,942 | INFO     | calculator.operations | SUBTRACT: 0 - 0 = 0
+2026-07-14 00:38:10,943 | INFO     | calculator.operations | SUBTRACT: -5 - -5 = 0
+2026-07-14 00:38:10,943 | INFO     | calculator.operations | SUBTRACT: 2.5 - 0.5 = 2.0
+2026-07-14 00:38:10,944 | INFO     | calculator.operations | MULTIPLY: 3 * 4 = 12
+2026-07-14 00:38:10,945 | INFO     | calculator.operations | MULTIPLY: -3 * 4 = -12
+2026-07-14 00:38:10,945 | INFO     | calculator.operations | MULTIPLY: 0 * 100 = 0
+2026-07-14 00:38:10,946 | INFO     | calculator.operations | MULTIPLY: -2 * -2 = 4
+2026-07-14 00:38:10,946 | INFO     | calculator.operations | MULTIPLY: 2.5 * 2 = 5.0
+2026-07-14 00:38:10,947 | INFO     | calculator.operations | DIVIDE: 10 / 2 = 5.0
+2026-07-14 00:38:10,948 | INFO     | calculator.operations | DIVIDE: 9 / 3 = 3.0
+2026-07-14 00:38:10,948 | INFO     | calculator.operations | DIVIDE: -10 / 2 = -5.0
+2026-07-14 00:38:10,949 | INFO     | calculator.operations | DIVIDE: 5 / 2 = 2.5
+2026-07-14 00:38:10,949 | ERROR    | calculator.operations | DIVIDE: Attempted division by zero (10 / 0)
+2026-07-19 15:59:25,921 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 15:59:26,202 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 15:59:26,221 | INFO     | calculator.main | User jaytest created calculation 1
+2026-07-19 15:59:26,639 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 15:59:27,018 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 15:59:27,039 | INFO     | calculator.main | User jaytest created calculation 1
+2026-07-19 15:59:27,406 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 15:59:27,606 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 15:59:27,623 | INFO     | calculator.main | User jaytest created calculation 1
+2026-07-19 15:59:27,927 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 15:59:28,119 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 15:59:28,395 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 15:59:28,586 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 15:59:29,024 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 15:59:29,320 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 15:59:29,725 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 15:59:29,931 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 15:59:29,950 | INFO     | calculator.main | User jaytest created calculation 1
+2026-07-19 15:59:29,963 | INFO     | calculator.main | User jaytest created calculation 2
+2026-07-19 15:59:30,391 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 15:59:30,691 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 15:59:30,710 | INFO     | calculator.main | User jaytest created calculation 1
+2026-07-19 15:59:30,920 | INFO     | calculator.main | Registered new user otheruser
+2026-07-19 15:59:31,109 | INFO     | calculator.main | User otheruser logged in
+2026-07-19 15:59:31,536 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 15:59:31,903 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 15:59:31,921 | INFO     | calculator.main | User jaytest created calculation 1
+2026-07-19 15:59:32,330 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 15:59:32,541 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 15:59:32,992 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 15:59:33,361 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 15:59:33,791 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 15:59:34,160 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 15:59:34,180 | INFO     | calculator.main | User jaytest created calculation 1
+2026-07-19 15:59:34,613 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 15:59:34,853 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 15:59:34,873 | INFO     | calculator.main | User jaytest created calculation 1
+2026-07-19 15:59:35,320 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 15:59:35,697 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 15:59:35,720 | INFO     | calculator.main | User jaytest created calculation 1
+2026-07-19 15:59:36,170 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 15:59:36,425 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 15:59:36,806 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 15:59:37,002 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 15:59:37,021 | INFO     | calculator.main | User jaytest created calculation 1
+2026-07-19 15:59:37,470 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 15:59:37,836 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 15:59:38,407 | INFO     | calculator.main | Registered new user newuser
+2026-07-19 15:59:38,840 | INFO     | calculator.main | Registered new user dbcheck
+2026-07-19 15:59:39,268 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 15:59:39,663 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 15:59:40,212 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 15:59:40,575 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 15:59:41,019 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 15:59:41,391 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 15:59:41,828 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 15:59:42,249 | INFO     | calculator.main | Serving index page to client Address(host='testclient', port=50000)
+2026-07-19 15:59:42,297 | INFO     | calculator.main | Health check requested
+2026-07-19 15:59:42,343 | INFO     | calculator.main | Received /add request: a=2.0 b=3.0
+2026-07-19 15:59:42,343 | INFO     | calculator.operations | ADD: 2.0 + 3.0 = 5.0
+2026-07-19 15:59:42,390 | INFO     | calculator.main | Received /add request: a=-2.0 b=-3.0
+2026-07-19 15:59:42,391 | INFO     | calculator.operations | ADD: -2.0 + -3.0 = -5.0
+2026-07-19 15:59:42,437 | INFO     | calculator.main | Received /subtract request: a=10.0 b=4.0
+2026-07-19 15:59:42,437 | INFO     | calculator.operations | SUBTRACT: 10.0 - 4.0 = 6.0
+2026-07-19 15:59:42,484 | INFO     | calculator.main | Received /subtract request: a=4.0 b=10.0
+2026-07-19 15:59:42,485 | INFO     | calculator.operations | SUBTRACT: 4.0 - 10.0 = -6.0
+2026-07-19 15:59:42,527 | INFO     | calculator.main | Received /multiply request: a=3.0 b=5.0
+2026-07-19 15:59:42,527 | INFO     | calculator.operations | MULTIPLY: 3.0 * 5.0 = 15.0
+2026-07-19 15:59:42,566 | INFO     | calculator.main | Received /multiply request: a=-3.0 b=5.0
+2026-07-19 15:59:42,566 | INFO     | calculator.operations | MULTIPLY: -3.0 * 5.0 = -15.0
+2026-07-19 15:59:42,614 | INFO     | calculator.main | Received /divide request: a=10.0 b=2.0
+2026-07-19 15:59:42,614 | INFO     | calculator.operations | DIVIDE: 10.0 / 2.0 = 5.0
+2026-07-19 15:59:42,662 | INFO     | calculator.main | Received /divide request: a=7.0 b=2.0
+2026-07-19 15:59:42,662 | INFO     | calculator.operations | DIVIDE: 7.0 / 2.0 = 3.5
+2026-07-19 15:59:42,710 | INFO     | calculator.main | Received /divide request: a=5.0 b=0.0
+2026-07-19 15:59:42,711 | ERROR    | calculator.operations | DIVIDE: Attempted division by zero (5.0 / 0.0)
+2026-07-19 15:59:42,711 | ERROR    | calculator.main | DIVIDE failed for a=5.0, b=0.0: Division by zero is not allowed.
+2026-07-19 15:59:43,072 | INFO     | calculator.operations | ADD: 1 + 2 = 3
+2026-07-19 15:59:43,110 | INFO     | calculator.operations | ADD: -1 + 1 = 0
+2026-07-19 15:59:43,146 | INFO     | calculator.operations | ADD: -5 + -5 = -10
+2026-07-19 15:59:43,183 | INFO     | calculator.operations | ADD: 0 + 0 = 0
+2026-07-19 15:59:43,227 | INFO     | calculator.operations | ADD: 2.5 + 2.5 = 5.0
+2026-07-19 15:59:43,268 | INFO     | calculator.operations | SUBTRACT: 5 - 3 = 2
+2026-07-19 15:59:43,308 | INFO     | calculator.operations | SUBTRACT: 3 - 5 = -2
+2026-07-19 15:59:43,350 | INFO     | calculator.operations | SUBTRACT: 0 - 0 = 0
+2026-07-19 15:59:43,384 | INFO     | calculator.operations | SUBTRACT: -5 - -5 = 0
+2026-07-19 15:59:43,421 | INFO     | calculator.operations | SUBTRACT: 2.5 - 0.5 = 2.0
+2026-07-19 15:59:43,462 | INFO     | calculator.operations | MULTIPLY: 3 * 4 = 12
+2026-07-19 15:59:43,502 | INFO     | calculator.operations | MULTIPLY: -3 * 4 = -12
+2026-07-19 15:59:43,539 | INFO     | calculator.operations | MULTIPLY: 0 * 100 = 0
+2026-07-19 15:59:43,574 | INFO     | calculator.operations | MULTIPLY: -2 * -2 = 4
+2026-07-19 15:59:43,605 | INFO     | calculator.operations | MULTIPLY: 2.5 * 2 = 5.0
+2026-07-19 15:59:43,640 | INFO     | calculator.operations | DIVIDE: 10 / 2 = 5.0
+2026-07-19 15:59:43,679 | INFO     | calculator.operations | DIVIDE: 9 / 3 = 3.0
+2026-07-19 15:59:43,717 | INFO     | calculator.operations | DIVIDE: -10 / 2 = -5.0
+2026-07-19 15:59:43,751 | INFO     | calculator.operations | DIVIDE: 5 / 2 = 2.5
+2026-07-19 15:59:43,786 | ERROR    | calculator.operations | DIVIDE: Attempted division by zero (10 / 0)
+2026-07-19 16:00:24,215 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:00:24,468 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:00:24,492 | INFO     | calculator.main | User jaytest created calculation 1
+2026-07-19 16:00:24,916 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:00:25,212 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:00:25,234 | INFO     | calculator.main | User jaytest created calculation 1
+2026-07-19 16:00:25,650 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:00:25,935 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:00:25,955 | INFO     | calculator.main | User jaytest created calculation 1
+2026-07-19 16:00:26,380 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:00:26,747 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:00:27,173 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:00:27,473 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:00:27,895 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:00:28,187 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:00:28,604 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:00:28,803 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:00:28,823 | INFO     | calculator.main | User jaytest created calculation 1
+2026-07-19 16:00:28,835 | INFO     | calculator.main | User jaytest created calculation 2
+2026-07-19 16:00:29,186 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:00:29,380 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:00:29,398 | INFO     | calculator.main | User jaytest created calculation 1
+2026-07-19 16:00:29,597 | INFO     | calculator.main | Registered new user otheruser
+2026-07-19 16:00:29,792 | INFO     | calculator.main | User otheruser logged in
+2026-07-19 16:00:30,224 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:00:30,519 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:00:30,536 | INFO     | calculator.main | User jaytest created calculation 1
+2026-07-19 16:00:30,882 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:00:31,078 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:00:31,402 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:00:31,769 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:00:32,203 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:00:32,548 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:00:32,566 | INFO     | calculator.main | User jaytest created calculation 1
+2026-07-19 16:00:32,931 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:00:33,133 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:00:33,150 | INFO     | calculator.main | User jaytest created calculation 1
+2026-07-19 16:00:33,580 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:00:33,874 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:00:33,891 | INFO     | calculator.main | User jaytest created calculation 1
+2026-07-19 16:00:34,216 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:00:34,408 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:00:34,734 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:00:34,926 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:00:34,944 | INFO     | calculator.main | User jaytest created calculation 1
+2026-07-19 16:00:35,259 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:00:35,630 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:00:36,200 | INFO     | calculator.main | Registered new user newuser
+2026-07-19 16:00:36,624 | INFO     | calculator.main | Registered new user dbcheck
+2026-07-19 16:00:37,009 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:00:37,371 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:00:37,907 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:00:38,274 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:00:38,703 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:00:39,081 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:00:39,507 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:00:39,903 | INFO     | calculator.main | Serving index page to client Address(host='testclient', port=50000)
+2026-07-19 16:00:39,950 | INFO     | calculator.main | Health check requested
+2026-07-19 16:00:40,000 | INFO     | calculator.main | Received /add request: a=2.0 b=3.0
+2026-07-19 16:00:40,000 | INFO     | calculator.operations | ADD: 2.0 + 3.0 = 5.0
+2026-07-19 16:00:40,052 | INFO     | calculator.main | Received /add request: a=-2.0 b=-3.0
+2026-07-19 16:00:40,052 | INFO     | calculator.operations | ADD: -2.0 + -3.0 = -5.0
+2026-07-19 16:00:40,099 | INFO     | calculator.main | Received /subtract request: a=10.0 b=4.0
+2026-07-19 16:00:40,100 | INFO     | calculator.operations | SUBTRACT: 10.0 - 4.0 = 6.0
+2026-07-19 16:00:40,150 | INFO     | calculator.main | Received /subtract request: a=4.0 b=10.0
+2026-07-19 16:00:40,150 | INFO     | calculator.operations | SUBTRACT: 4.0 - 10.0 = -6.0
+2026-07-19 16:00:40,195 | INFO     | calculator.main | Received /multiply request: a=3.0 b=5.0
+2026-07-19 16:00:40,196 | INFO     | calculator.operations | MULTIPLY: 3.0 * 5.0 = 15.0
+2026-07-19 16:00:40,238 | INFO     | calculator.main | Received /multiply request: a=-3.0 b=5.0
+2026-07-19 16:00:40,238 | INFO     | calculator.operations | MULTIPLY: -3.0 * 5.0 = -15.0
+2026-07-19 16:00:40,283 | INFO     | calculator.main | Received /divide request: a=10.0 b=2.0
+2026-07-19 16:00:40,283 | INFO     | calculator.operations | DIVIDE: 10.0 / 2.0 = 5.0
+2026-07-19 16:00:40,331 | INFO     | calculator.main | Received /divide request: a=7.0 b=2.0
+2026-07-19 16:00:40,331 | INFO     | calculator.operations | DIVIDE: 7.0 / 2.0 = 3.5
+2026-07-19 16:00:40,380 | INFO     | calculator.main | Received /divide request: a=5.0 b=0.0
+2026-07-19 16:00:40,380 | ERROR    | calculator.operations | DIVIDE: Attempted division by zero (5.0 / 0.0)
+2026-07-19 16:00:40,380 | ERROR    | calculator.main | DIVIDE failed for a=5.0, b=0.0: Division by zero is not allowed.
+2026-07-19 16:00:40,771 | INFO     | calculator.operations | ADD: 1 + 2 = 3
+2026-07-19 16:00:40,809 | INFO     | calculator.operations | ADD: -1 + 1 = 0
+2026-07-19 16:00:40,847 | INFO     | calculator.operations | ADD: -5 + -5 = -10
+2026-07-19 16:00:40,892 | INFO     | calculator.operations | ADD: 0 + 0 = 0
+2026-07-19 16:00:40,940 | INFO     | calculator.operations | ADD: 2.5 + 2.5 = 5.0
+2026-07-19 16:00:40,985 | INFO     | calculator.operations | SUBTRACT: 5 - 3 = 2
+2026-07-19 16:00:41,028 | INFO     | calculator.operations | SUBTRACT: 3 - 5 = -2
+2026-07-19 16:00:41,071 | INFO     | calculator.operations | SUBTRACT: 0 - 0 = 0
+2026-07-19 16:00:41,111 | INFO     | calculator.operations | SUBTRACT: -5 - -5 = 0
+2026-07-19 16:00:41,146 | INFO     | calculator.operations | SUBTRACT: 2.5 - 0.5 = 2.0
+2026-07-19 16:00:41,186 | INFO     | calculator.operations | MULTIPLY: 3 * 4 = 12
+2026-07-19 16:00:41,226 | INFO     | calculator.operations | MULTIPLY: -3 * 4 = -12
+2026-07-19 16:00:41,262 | INFO     | calculator.operations | MULTIPLY: 0 * 100 = 0
+2026-07-19 16:00:41,300 | INFO     | calculator.operations | MULTIPLY: -2 * -2 = 4
+2026-07-19 16:00:41,340 | INFO     | calculator.operations | MULTIPLY: 2.5 * 2 = 5.0
+2026-07-19 16:00:41,383 | INFO     | calculator.operations | DIVIDE: 10 / 2 = 5.0
+2026-07-19 16:00:41,426 | INFO     | calculator.operations | DIVIDE: 9 / 3 = 3.0
+2026-07-19 16:00:41,464 | INFO     | calculator.operations | DIVIDE: -10 / 2 = -5.0
+2026-07-19 16:00:41,507 | INFO     | calculator.operations | DIVIDE: 5 / 2 = 2.5
+2026-07-19 16:00:41,543 | ERROR    | calculator.operations | DIVIDE: Attempted division by zero (10 / 0)
+2026-07-19 16:05:18,348 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:05:18,554 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:05:18,574 | INFO     | calculator.main | User jaytest created calculation 1
+2026-07-19 16:05:18,953 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:05:19,334 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:05:19,354 | INFO     | calculator.main | User jaytest created calculation 1
+2026-07-19 16:05:19,778 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:05:20,045 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:05:20,063 | INFO     | calculator.main | User jaytest created calculation 1
+2026-07-19 16:05:20,355 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:05:20,547 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:05:20,831 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:05:21,023 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:05:21,334 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:05:21,596 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:05:22,083 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:05:22,448 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:05:22,470 | INFO     | calculator.main | User jaytest created calculation 1
+2026-07-19 16:05:22,484 | INFO     | calculator.main | User jaytest created calculation 2
+2026-07-19 16:05:22,913 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:05:23,194 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:05:23,213 | INFO     | calculator.main | User jaytest created calculation 1
+2026-07-19 16:05:23,422 | INFO     | calculator.main | Registered new user otheruser
+2026-07-19 16:05:23,624 | INFO     | calculator.main | User otheruser logged in
+2026-07-19 16:05:23,916 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:05:24,109 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:05:24,127 | INFO     | calculator.main | User jaytest created calculation 1
+2026-07-19 16:05:24,456 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:05:24,827 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:05:25,250 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:05:25,471 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:05:25,896 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:05:26,196 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:05:26,210 | INFO     | calculator.main | User jaytest created calculation 1
+2026-07-19 16:05:26,567 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:05:26,761 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:05:26,781 | INFO     | calculator.main | User jaytest created calculation 1
+2026-07-19 16:05:27,214 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:05:27,512 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:05:27,532 | INFO     | calculator.main | User jaytest created calculation 1
+2026-07-19 16:05:27,961 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:05:28,246 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:05:28,555 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:05:28,924 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:05:28,943 | INFO     | calculator.main | User jaytest created calculation 1
+2026-07-19 16:05:29,402 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:05:29,783 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:05:32,167 | INFO     | calculator.main | Registered new user newuser
+2026-07-19 16:05:32,576 | INFO     | calculator.main | Registered new user dbcheck
+2026-07-19 16:05:33,019 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:05:33,454 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:05:33,991 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:05:34,275 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:05:34,708 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:05:35,080 | INFO     | calculator.main | User jaytest logged in
+2026-07-19 16:05:35,508 | INFO     | calculator.main | Registered new user jaytest
+2026-07-19 16:05:35,883 | INFO     | calculator.main | Serving index page to client Address(host='testclient', port=50000)
+2026-07-19 16:05:35,928 | INFO     | calculator.main | Health check requested
+2026-07-19 16:05:35,973 | INFO     | calculator.main | Received /add request: a=2.0 b=3.0
+2026-07-19 16:05:35,973 | INFO     | calculator.operations | ADD: 2.0 + 3.0 = 5.0
+2026-07-19 16:05:36,013 | INFO     | calculator.main | Received /add request: a=-2.0 b=-3.0
+2026-07-19 16:05:36,014 | INFO     | calculator.operations | ADD: -2.0 + -3.0 = -5.0
+2026-07-19 16:05:36,055 | INFO     | calculator.main | Received /subtract request: a=10.0 b=4.0
+2026-07-19 16:05:36,055 | INFO     | calculator.operations | SUBTRACT: 10.0 - 4.0 = 6.0
+2026-07-19 16:05:36,092 | INFO     | calculator.main | Received /subtract request: a=4.0 b=10.0
+2026-07-19 16:05:36,092 | INFO     | calculator.operations | SUBTRACT: 4.0 - 10.0 = -6.0
+2026-07-19 16:05:36,131 | INFO     | calculator.main | Received /multiply request: a=3.0 b=5.0
+2026-07-19 16:05:36,131 | INFO     | calculator.operations | MULTIPLY: 3.0 * 5.0 = 15.0
+2026-07-19 16:05:36,166 | INFO     | calculator.main | Received /multiply request: a=-3.0 b=5.0
+2026-07-19 16:05:36,167 | INFO     | calculator.operations | MULTIPLY: -3.0 * 5.0 = -15.0
+2026-07-19 16:05:36,206 | INFO     | calculator.main | Received /divide request: a=10.0 b=2.0
+2026-07-19 16:05:36,207 | INFO     | calculator.operations | DIVIDE: 10.0 / 2.0 = 5.0
+2026-07-19 16:05:36,246 | INFO     | calculator.main | Received /divide request: a=7.0 b=2.0
+2026-07-19 16:05:36,246 | INFO     | calculator.operations | DIVIDE: 7.0 / 2.0 = 3.5
+2026-07-19 16:05:36,283 | INFO     | calculator.main | Received /divide request: a=5.0 b=0.0
+2026-07-19 16:05:36,283 | ERROR    | calculator.operations | DIVIDE: Attempted division by zero (5.0 / 0.0)
+2026-07-19 16:05:36,283 | ERROR    | calculator.main | DIVIDE failed for a=5.0, b=0.0: Division by zero is not allowed.
+2026-07-19 16:05:36,634 | INFO     | calculator.operations | ADD: 1 + 2 = 3
+2026-07-19 16:05:36,673 | INFO     | calculator.operations | ADD: -1 + 1 = 0
+2026-07-19 16:05:36,718 | INFO     | calculator.operations | ADD: -5 + -5 = -10
+2026-07-19 16:05:36,756 | INFO     | calculator.operations | ADD: 0 + 0 = 0
+2026-07-19 16:05:36,792 | INFO     | calculator.operations | ADD: 2.5 + 2.5 = 5.0
+2026-07-19 16:05:36,826 | INFO     | calculator.operations | SUBTRACT: 5 - 3 = 2
+2026-07-19 16:05:36,866 | INFO     | calculator.operations | SUBTRACT: 3 - 5 = -2
+2026-07-19 16:05:36,901 | INFO     | calculator.operations | SUBTRACT: 0 - 0 = 0
+2026-07-19 16:05:36,938 | INFO     | calculator.operations | SUBTRACT: -5 - -5 = 0
+2026-07-19 16:05:36,979 | INFO     | calculator.operations | SUBTRACT: 2.5 - 0.5 = 2.0
+2026-07-19 16:05:37,016 | INFO     | calculator.operations | MULTIPLY: 3 * 4 = 12
+2026-07-19 16:05:37,056 | INFO     | calculator.operations | MULTIPLY: -3 * 4 = -12
+2026-07-19 16:05:37,095 | INFO     | calculator.operations | MULTIPLY: 0 * 100 = 0
+2026-07-19 16:05:37,134 | INFO     | calculator.operations | MULTIPLY: -2 * -2 = 4
+2026-07-19 16:05:37,168 | INFO     | calculator.operations | MULTIPLY: 2.5 * 2 = 5.0
+2026-07-19 16:05:37,205 | INFO     | calculator.operations | DIVIDE: 10 / 2 = 5.0
+2026-07-19 16:05:37,241 | INFO     | calculator.operations | DIVIDE: 9 / 3 = 3.0
+2026-07-19 16:05:37,276 | INFO     | calculator.operations | DIVIDE: -10 / 2 = -5.0
+2026-07-19 16:05:37,307 | INFO     | calculator.operations | DIVIDE: 5 / 2 = 2.5
+2026-07-19 16:05:37,345 | ERROR    | calculator.operations | DIVIDE: Attempted division by zero (10 / 0)
