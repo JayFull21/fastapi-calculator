@@ -1,8 +1,6 @@
+venv/
 __pycache__/
 *.pyc
-.venv/
-venv/
-logs/
 .pytest_cache/
-*.egg-info/
+*.db
 .env

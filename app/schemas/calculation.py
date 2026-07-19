@@ -3,7 +3,7 @@ Pydantic schemas for the Calculation model.
 
 CalculationCreate validates incoming data (type enum + divide-by-zero
 rejection at the schema level). CalculationRead defines the serialized
-output shape.
+output shape. CalculationUpdate (Module 12) allows partial edits via PUT.
 """
 
 import uuid
@@ -47,6 +47,22 @@ class CalculationCreate(CalculationBase):
             }
         }
     )
+
+
+class CalculationUpdate(BaseModel):
+    """Schema for partial calculation edits via PUT (Module 12). All fields optional."""
+
+    a: float | None = None
+    b: float | None = None
+    type: CalculationType | None = None
+
+    @model_validator(mode="after")
+    def validate_operands(self) -> "CalculationUpdate":
+        # Full divide-by-zero validation happens in the endpoint (where the
+        # merged type/a/b values are known); this catches the obvious case.
+        if self.type == CalculationType.DIVIDE and self.b == 0:
+            raise ValueError("Division by zero is not allowed")
+        return self
 
 
 class CalculationRead(CalculationBase):

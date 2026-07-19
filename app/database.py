@@ -1,22 +1,27 @@
-
-
 import os
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker, declarative_base
 
-# In Docker Compose, the Postgres service is reachable at hostname "db"
-# (the service name). Locally outside Docker, fall back to localhost.
-DATABASE_URL = os.environ.get(
+from sqlalchemy import create_engine
+from sqlalchemy.orm import DeclarativeBase, sessionmaker
+
+# Reads DATABASE_URL from the environment (set in docker-compose / GitHub Actions).
+# Falls back to a local Postgres URL for manual dev runs.
+DATABASE_URL = os.getenv(
     "DATABASE_URL",
-    "postgresql://postgres:postgres@db:5432/fastapi_db"
+    "postgresql://postgres:postgres@localhost:5432/fastapi_db",
 )
 
-engine = create_engine(DATABASE_URL, pool_pre_ping=True)
+connect_args = {"check_same_thread": False} if DATABASE_URL.startswith("sqlite") else {}
+
+engine = create_engine(DATABASE_URL, connect_args=connect_args)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-Base = declarative_base()
+
+
+class Base(DeclarativeBase):
+    pass
 
 
 def get_db():
+    """FastAPI dependency that yields a DB session and always closes it."""
     db = SessionLocal()
     try:
         yield db
